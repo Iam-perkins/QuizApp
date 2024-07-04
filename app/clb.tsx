@@ -7,7 +7,7 @@ import { RootStackParamList } from '@/screens/types';
 import { rgbaColor } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
 
 
-type LevelNavigationProps = StackNavigationProp<RootStackParamList, 'chooseLevel'>;
+type LevelNavigationProps = StackNavigationProp<RootStackParamList, 'clb'>;
 
 const Level: React.FC = () => {
   const navigation = useNavigation<LevelNavigationProps>();
@@ -24,17 +24,17 @@ const Level: React.FC = () => {
         marginBottom:10,
     }}>
         <TouchableOpacity style={styles.buttonContainer} onPress={(styles)=>{Color:'red'}}>
-        <Link to='/result'>
+        <Link to='/reasybio'>
           <Text style={styles.buttonText}>Easy</Text>
         </Link>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonContainer}>
-        <Link to='/result'>
+        <Link to='/reasybio'>
           <Text style={styles.buttonText} >Normal</Text>
         </Link>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonContainer}>
-        <Link to='/result'>
+        <Link to='/rhardbio'>
           <Text style={styles.buttonText} >Hard</Text>
         </Link>
         </TouchableOpacity>

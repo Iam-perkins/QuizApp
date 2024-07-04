@@ -1,27 +1,18 @@
-import { StyleSheet , TouchableOpacity} from 'react-native';
+import { StyleSheet ,Text , View, Image} from 'react-native';
+import React from 'react';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-import{Stack} from 'expo-router' ;
-import { Ionicons } from '@expo/vector-icons';
-import Colors from '@/constants/Colors';
 
-export default function TabfourScreen() {
+
+
+export default function TabTwoScreen() {
   return (
-    <View>
-    <Stack.Screen options={{
-      headerRight :()=>(
-       <TouchableOpacity onPress={()=>{ }}>
-              <Ionicons name='notifications' size={30} color='green'/>
-       </TouchableOpacity>
-      ),
-      headerLeft : ()=>(
-        <TouchableOpacity></TouchableOpacity>
-      )
-    }}
-    />
+    <View style={styles.container}>
+      <Image style = {styles.img} source = {require("@/assets/images/profile.png")}></Image>
+      <Text style={styles.title}>Ado Cardine</Text>
+      <Text style = {styles.text}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum dolor quidem quasi numquam accusamus sed</Text>
+      <View style={styles.separator} />
 
-  </View>
+    </View>
   );
 }
 
@@ -35,9 +26,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
+
+  text: {
+    textAlign: "center",
+    marginTop: 10,
+     color:'white'
+  },
+
   separator: {
     marginVertical: 30,
     height: 1,
     width: '80%',
   },
+
+  img: {
+    height: 200,
+    width: 200
+  }
 });

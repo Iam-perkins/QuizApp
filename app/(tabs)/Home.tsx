@@ -9,9 +9,27 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '@/screens/types';
 import destinationCategories from '@/data/components';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Biology from '@/data/componentsB';
 import { Link } from '@react-navigation/native';
+
+//const ScrollSpy: React.FC = () => {
+ // const scrollRef = useRef<ScrollView>(null);
+  //const itemRefs = useRef<Array<TouchableOpacity>>([]);
+
+  
+  //const handleSelectCategory = (index: number) => {
+   // if (scrollRef.current && itemRefs.current[index]) {
+   //   const scrollX = itemRefs.current[index]._component.measure((x: number, y: number, width: number, height: number) => {
+     //   scrollRef.current?.scrollTo({ x: x + width * index, y: 0, animated: true });
+     // });
+
+     // const destinationTag = `section${index + 1}`; 
+     // const destinationOffset = index * itemRefs.current[index].layout.width;
+    //  scrollRef.current.scrollTo({ x: destinationOffset, y: 0, animated: true });
+   // }
+ // };
+//};
 
 type HomeNavigationProps = StackNavigationProp<RootStackParamList, 'Home'>;
 
@@ -26,6 +44,9 @@ const Home: React.FC = () => {
   const handleNavigateToLevel = () => {
     navigation.navigate('chooseLevel');
   };
+  const handleNavigateToLevelb = () => {
+    navigation.navigate('clb');
+  };
 
   const scroll = useRef<ScrollView>(null);
   const itemref= useRef<TouchableOpacity[] | null[]>([]);
@@ -39,6 +60,8 @@ const Home: React.FC = () => {
         scroll.current?.scrollTo({x:x , y: 0, animated:true})
     })
   };
+  
+  
   return (
     <>
    
@@ -83,14 +106,14 @@ const Home: React.FC = () => {
      </View>
      <ScrollView>
     
-     <View>
+     <View testID="section1">
       <Text style={{fontSize:20, fontFamily:'sans-serif', fontWeight:'condensedBold'}}>Biology</Text>
      <ScrollView horizontal contentContainerStyle={{
           gap:25,
         }}>
         <View style={styles.imageclick}>
           
-          <TouchableOpacity onPress={ handleNavigateToLevel}>
+          <TouchableOpacity onPress={ handleNavigateToLevelb}>
             
             <Image source={require('@/assets/images/red-blood-cells.webp')} style={{width:250, height:250, borderRadius:10}} />
             
@@ -99,7 +122,7 @@ const Home: React.FC = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.imageclick}>
-          <TouchableOpacity onPress={ handleNavigateToLevel}>
+          <TouchableOpacity onPress={ handleNavigateToLevelb}>
             <Image source={require('@/assets/images/genetics.webp')} style={{width:250, height:250 ,borderRadius:10}}/>
             
         <Text style={styles.imagestyle}>GENETICS</Text>
@@ -107,19 +130,19 @@ const Home: React.FC = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.imageclick}>
-          <TouchableOpacity onPress={handleNavigateToLevel}>
+          <TouchableOpacity onPress={handleNavigateToLevelb}>
             <Image source={require('@/assets/images/human-skeleton.webp')} style={{width:250, height:250, borderRadius:10}}/>
             <Text style={styles.imagestyle}>HUMAN ANATOMY</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.imageclick}>
-          <TouchableOpacity onPress={handleNavigateToLevel}>
+          <TouchableOpacity onPress={handleNavigateToLevelb}>
             <Image source={require('@/assets/images/ecology.jpg')} style={{width:250, height:250,borderRadius:10}}/>
             <Text style={styles.imagestyle}>ECOLOGY</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.imageclick}>
-          <TouchableOpacity onPress={handleNavigateToLevel}>
+          <TouchableOpacity onPress={handleNavigateToLevelb}>
             <Image source={require('@/assets/images/botany.jpg')} style={{width:250, height:250, borderRadius:10}}/>
             <Text style={styles.imagestyle}>BOTANY</Text>
           </TouchableOpacity>
@@ -176,25 +199,25 @@ const Home: React.FC = () => {
         }}>
         <View style={styles.imageclick}>
           <TouchableOpacity onPress={handleNavigateToLevel}>
-            <Image source={require('@/assets/images/grammar.jpg')} style={{width:250, height:250,borderRadius:10}} />
+            <Image source={require('@/assets/images/french1.webp')} style={{width:250, height:250,borderRadius:10}} />
             <Text style={styles.imagestyle}>GRAMMAIRE</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.imageclick}>
           <TouchableOpacity onPress={handleNavigateToLevel}>
-            <Image source={require('@/assets/images/vocabulary.jpg')} style={{width:250, height:250,borderRadius:10}}/>
+            <Image source={require('@/assets/images/french2.jpg')} style={{width:250, height:250,borderRadius:10}}/>
             <Text style={styles.imagestyle}>VOCABULAIRE</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.imageclick}>
           <TouchableOpacity onPress={handleNavigateToLevel}>
-            <Image source={require('@/assets/images/comprehension.jpg')} style={{width:250, height:250,borderRadius:10}}/>
+            <Image source={require('@/assets/images/french3.jpg')} style={{width:250, height:250,borderRadius:10}}/>
             <Text style={styles.imagestyle}>COMPREHENSION</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.imageclick}>
           <TouchableOpacity onPress={handleNavigateToLevel}>
-            <Image source={require('@/assets/images/writing.jpg')} style={{width:250, height:250,borderRadius:10}}/>
+            <Image source={require('@/assets/images/french4.jpg')} style={{width:250, height:250,borderRadius:10}}/>
             <Text style={styles.imagestyle}>ECRIRE</Text>
           </TouchableOpacity>
         </View>

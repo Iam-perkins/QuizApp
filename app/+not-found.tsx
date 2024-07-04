@@ -1,4 +1,5 @@
 import {  Stack } from 'expo-router';
+import React from 'react';
 import { StyleSheet , Image} from 'react-native';
 import { Link } from '@react-navigation/native';
 import { Text, View } from '@/components/Themed';
@@ -8,10 +9,10 @@ export default function NotFoundScreen() {
     <>
       <Stack.Screen options={{ title: 'click Here' }} />
       <View style={styles.container}>
-        <Text style={styles.title}>home</Text>
+        <Text style={styles.title}></Text>
 
-        <Link to="/Home" style={styles.link}>
-          <Text style={styles.linkText}>start!</Text>
+        <Link to="/start" style={styles.link}>
+          <Text style={styles.linkText}>lets go!</Text>
         </Link>
       </View>
     </>

@@ -4,6 +4,7 @@ import { createStackNavigator, StackNavigationOptions } from '@react-navigation/
 import Home from './app/(tabs)/Home';
 import chooseLevel from './app/chooseLevel';
 import { RootStackParamList } from '@/screens/types';
+import clb from './app/clb';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="chooseLevel" component={chooseLevel} />
+          <Stack.Screen name="clb" component={clb} />
         </Stack.Navigator>
       </NavigationContainer>
     );
